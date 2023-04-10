@@ -3,12 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "apexcharts": "^3.37.2",
+    "axios": "^1.3.3",
+    "chart.js": "^4.2.1",
+    "chartjs-plugin-datalabels": "^2.2.0",
     "react": "^18.2.0",
+    "react-apexcharts": "^1.4.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
+    "react-select": "^5.7.0",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,5 +46,25 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.0.0",
+    "@types/react-router-dom": "^5.3.3",
+    "file-loader": "^6.2.0",
+    "typescript": "^4.9.5"
+  },
+  "webpack": {
+    "configure": {
+      "module": {
+        "rules": [
+          {
+            "test": "\\.svg$",
+            "use": [
+              "@svgr/webpack"
+            ]
+          }
+        ]
+      }
+    }
   }
 }

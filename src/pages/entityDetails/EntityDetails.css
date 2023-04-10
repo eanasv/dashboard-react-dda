@@ -1,0 +1,72 @@
+.enti-container {
+  padding-top: 65px;
+}
+.back-button {
+  display: flex;
+  padding-left: 40px;
+  background: linear-gradient(45deg, black, transparent);
+  height: 51px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding-right: 9px;
+  position: fixed;
+  z-index: 10;
+}
+.employeeList {
+  width: 40%;
+  min-height: 100px;
+  height: auto;
+  max-height: 300px;
+  /* border: 1px solid red; */
+  display: flex;
+  margin-left: 40px;
+  overflow: auto;
+  flex-direction: column;
+  padding: 35px;
+}
+table.table {
+  width: 90%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border: 1px solid #26ade3;
+}
+td.each-column-border {
+  border: 1px solid #26ade3;
+  padding: 5px;
+  text-transform: capitalize;
+}
+th.each-column-border {
+  border: 1px solid #26ade3;
+  padding: 5px;
+}
+.heading {
+  font-size: 30px;
+  padding-bottom: 60px;
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+.donutDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  width: 50%;
+}
+.top-section {
+  display: flex;
+  align-items: center;
+}
+.heading-cont {
+  display: flex;
+}
+.employee-details-heading {
+  text-align: center;
+  color: #cb989f;
+  font-weight: 700;
+  font-size: 19px;
+  padding-bottom: 20px;
+  text-decoration: underline;
+}

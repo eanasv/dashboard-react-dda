@@ -1,0 +1,19 @@
+table.table{
+    width: 90%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    border: 1px solid #26ade3
+}
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+  }
+  td.each-column-border {
+    border: 1px solid #26ade3;
+     padding: 5px
+  }
+  th.each-column-border{
+    border: 1px solid #26ade3;
+     padding: 5px
+  }
