@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import Compass from "../../../components/compass/Compass";
-import FilterSection from "../../../components/filterSection/FilterSection";
-import GraphDashboard from "../../../components/Graph/GraphDashboard";
-import HalfDonutChart from "../../../components/Graph/halfDonutChart/HalfDonutChart";
-import HalfDonutChart1 from "../../../components/Graph/halfDonutChart/HalfDonutChart1";
+import JobChart from "../../../components/Graph/jobChart/JobChart";
+import TestChart from "../../../components/Graph/TestChart";
 import { MainChartSection } from "../../../components/mainChartSection/MainChartSection";
-import Table from "../../../components/table/Table";
+import { LoadingSpinner } from "../../../components/spinner/LoadingSpinner";
+import ParentComponent from "../../../components/test/ParentComponent";
 //import ReactLogo from "../assets/compass.svg";
 
 function Home() {
@@ -22,7 +20,6 @@ function Home() {
       {/* <Table data={displayDataSet} /> */}
       {/* <GraphDashboard /> */}
       {/* <HalfDonutChart1 /> */}
-
       <MainChartSection />
     </div>
   );

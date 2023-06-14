@@ -23,7 +23,7 @@ const MultiSelectDropdown = () => {
     <div>
       <label>Select options:</label>
       <select multiple={true} value={selectedOptions} onChange={handleSelect}>
-        {options.map((option) => (
+        {options?.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
           </option>

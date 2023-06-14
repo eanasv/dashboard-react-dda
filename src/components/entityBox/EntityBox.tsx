@@ -1,4 +1,5 @@
 import React from "react";
+import Score from "../score/Score";
 import "./EntityBox.css";
 //import pic from ".assets/rta.png";
 
@@ -10,17 +11,21 @@ interface entityDetails {
 const EntityBox: React.FC<entityDetails> = (entityDetails) => {
   return (
     <div className="each-entity-box">
-      <div className="entity-logo">
-        <img
-          //src={require(`../../assets/${entityDetails.logo}`)}
-          src={`data:image/png;base64,${entityDetails.logo}`}
-          alt=""
-          //   width="50%"
-          //   height="50%"
-        />
+      <div className="first-col">
+        <div className="entity-logo">
+          <img
+            className="list-logo"
+            //src={require(`../../assets/${entityDetails.logo}`)}
+            src={`data:image/png;base64,${entityDetails.logo}`}
+            alt=""
+            //   width="50%"
+            //   height="50%"
+          />
+        </div>
+        <div className="entity-name">{entityDetails.name}</div>
       </div>
-      <div className="entity-name">{entityDetails.name}</div>
-      <div
+      <Score score={entityDetails.totalEntityScore} />
+      {/* <div
         className={[
           "entity-score",
           entityDetails.totalEntityScore >= 80
@@ -31,8 +36,8 @@ const EntityBox: React.FC<entityDetails> = (entityDetails) => {
             : "red-value",
         ].join(" ")}
       >
-        {entityDetails.totalEntityScore ? entityDetails.totalEntityScore : 0} %
-      </div>
+        {entityDetails.totalEntityScore ? entityDetails.totalEntityScore : 0}%
+      </div> */}
     </div>
   );
 };

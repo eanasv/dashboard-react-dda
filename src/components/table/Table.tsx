@@ -30,7 +30,7 @@ const Table: React.FC<tableInterface> = (props) => {
       <table className="table">
         <thead>
           <tr>
-            {columnHeadingNameSet.map((item, index) => (
+            {columnHeadingNameSet?.map((item, index) => (
               <th key={index} className="each-column-border">
                 {item.replace(/_/g, "  ").toUpperCase()}
               </th>
@@ -38,9 +38,12 @@ const Table: React.FC<tableInterface> = (props) => {
           </tr>
         </thead>
         <tbody>
-          {tableData.map((item, index) => (
-            <tr key={index}>
-              {columnHeadingNameSet.map((heading, number) => (
+          {tableData?.map((item, index) => (
+            <tr
+              key={index}
+              // className={index % 2 === 0 ? "even-row" : "odd-row"}
+            >
+              {columnHeadingNameSet?.map((heading, number) => (
                 <td key={number} className="each-column-border">
                   {item[heading]}
                 </td>

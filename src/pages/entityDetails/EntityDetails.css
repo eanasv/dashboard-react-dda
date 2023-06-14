@@ -1,6 +1,15 @@
 .enti-container {
   padding-top: 65px;
 }
+.even-row {
+  background-color: #e6edf2;
+  color: black;
+}
+
+.odd-row {
+  background-color: white;
+  color: black;
+}
 .back-button {
   display: flex;
   padding-left: 40px;
@@ -13,14 +22,14 @@
   z-index: 10;
 }
 .employeeList {
-  width: 40%;
+  width: 90%;
   min-height: 100px;
-  height: auto;
+  /* height: auto;
   max-height: 300px;
+  overflow: auto; */
   /* border: 1px solid red; */
   display: flex;
   margin-left: 40px;
-  overflow: auto;
   flex-direction: column;
   padding: 35px;
 }
@@ -29,15 +38,15 @@ table.table {
   margin: auto;
   left: 0;
   right: 0;
-  border: 1px solid #26ade3;
+  border: 1px solid black;
 }
 td.each-column-border {
-  border: 1px solid #26ade3;
+  border: 1px solid black;
   padding: 5px;
   text-transform: capitalize;
 }
 th.each-column-border {
-  border: 1px solid #26ade3;
+  border: 1px solid black;
   padding: 5px;
 }
 .heading {
@@ -45,7 +54,7 @@ th.each-column-border {
   padding-bottom: 60px;
   text-decoration: underline;
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex: 1;
 }
 .donutDiv {
@@ -64,9 +73,49 @@ th.each-column-border {
 }
 .employee-details-heading {
   text-align: center;
-  color: #cb989f;
+  /* color: #cb989f; */
   font-weight: 700;
   font-size: 19px;
   padding-bottom: 20px;
   text-decoration: underline;
+}
+.loader {
+  margin-top: 200px;
+}
+.drop-down-container {
+  display: flex;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+  /* border-radius: 50px; */
+}
+.logo-container {
+  padding-left: 2%;
+  display: flex;
+  flex-direction: column;
+}
+.entity-score-section {
+  border: 3px solid rosybrown;
+  border-radius: 10px;
+  padding: 8px;
+}
+.list-logo {
+  width: 100px;
+  height: 100px;
+}
+.score-container {
+  margin-left: 106px;
+  height: 180px;
+  margin-top: -14px;
+  width: 150px;
+}
+.top-head {
+  display: flex;
+  width: 100%;
+}
+
+.capitalise {
+  text-transform: capitalize;
+  text-align: start;
 }

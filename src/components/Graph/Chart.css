@@ -13,5 +13,28 @@
   padding-top: 60px;
 }
 .donut-heading {
-  margin-left: -116px;
+  /* margin-left: -116px; */
+  text-transform: capitalize;
+}
+.apexcharts-donut-series {
+  min-height: 0 !important; /* override the default value */
+}
+/* .apexcharts-canvas {
+  height: 1000px !important;
+  min-height: 1000px !important;
+} */
+.chart-bg {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 22px 35px -16px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.bar-chart {
+  margin-left: 10px;
+  margin-right: 10px;
 }

@@ -1,126 +1,105 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import Chart from "react-apexcharts";
-
-import { Bar, Doughnut } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend,
-  ChartOptions,
-} from "chart.js";
-//import "chartjs-plugin-datalabels";
-import ChartDataLabels from "chartjs-plugin-datalabels";
-
-import "../Chart.css";
-
-ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface donutChartInterface {
   details?: any;
+  heading?: String;
   multiLayer?: boolean;
-  heading: String;
+  showLegend: boolean;
 }
 
-const DoughnutChart: React.FC<donutChartInterface> = ({
+const Doughnut: React.FC<donutChartInterface> = ({
   details,
-  multiLayer,
   heading,
+  multiLayer,
+  showLegend,
 }) => {
-  var data;
-  if (details && multiLayer) {
-    data = {
-      datasets: [
-        {
-          data: [details[0]?.count, 100 - details[0]?.count],
-          label: details[0]?.category,
-          backgroundColor: ["#a2d6c4", "#ededed"],
-          hoverBackgroundColor: ["green", "#909497"],
-          legend: ["completed1", "not completed1"],
+  //console.log(details);
+  const [label, setLabel] = useState(details?.map((item) => item.category));
+  const [dataSeries, setdataSeries] = useState(
+    details?.map((item) => item.count)
+  );
+  const [option, setOption] = useState<any>({
+    height: 450,
+    chart: {
+      height: 400, // set the height to 400px
+      width: 400,
+    },
+    plotOptions: {
+      pie: {
+        donut: {
+          //size: "10%", // Adjust the size of the donut ring
         },
-        {
-          data: [details[1]?.count, 100 - details[1]?.count],
-          label: details[1]?.category,
-          backgroundColor: ["rgba(54, 162, 235, 0.2)", "#ededed"],
-          hoverBackgroundColor: ["rgba(54, 162, 235, 1)", "#909497"],
-          legent: ["completed3", "not completed3"],
+      },
+    },
+
+    labels: details?.map((item) => item.category),
+    legend: {
+      show: showLegend,
+      labels: {
+        colors: "#333",
+        useSeriesColors: false,
+        formatter: function (value, { seriesIndex, w }) {
+          return details.labels[seriesIndex] + ": " + value + "%";
         },
-        {
-          data: [details[2]?.count, 100 - details[2]?.count],
-          label: details[2]?.category,
-          backgroundColor: ["rgba(255, 206, 86, 0.2)", "#ededed"],
-          hoverBackgroundColor: ["#FF6384", "#909497"],
-          legent: ["completed2", "not completed2"],
+      },
+      //labels: details?.map((item) => item.category),
+      tooltip: {
+        y: {
+          formatter: function (val) {
+            return val + ".00" + " Rs";
+          },
+          title: {
+            formatter: function (seriesName) {
+              return "# of Employees in ";
+            },
+          },
         },
-      ],
-      labels: ["completed", "not completed"],
-    };
-  } else {
-    data = {
+      },
+    },
+    // title: {
+    //   text: "Dubai Skills %",
+    //   style: {
+    //     fontSize: "14px",
+    //     fontWeight: "bold",
+    //     fontFamily: "Bukra",
+    //     color: "red",
+    //   },
+    // },
+    // stroke: {
+    //   width: 2,
+    //   colors: ["#000"],
+    // },
+  });
+
+  useEffect(() => {
+    setLabel(details?.map((item) => item.category));
+    setdataSeries(details?.map((item) => item.count));
+    setOption((prevState) => ({
+      ...prevState,
+      //legend: { show: showLegend },
       labels: details?.map((item) => item.category),
-      datasets: [
-        {
-          label: "# of Employees",
-          data: details?.map((item) => item.count),
-          backgroundColor: [
-            "#a2d6c4",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-          ],
-          borderColor: ["white", "white", "white"],
-          borderWidth: 3,
-        },
-      ],
-      // options: {
-      //   plugins: {
-      //     datalabels: {
-      //       formatter: (value) => {
-      //         console.log(value);
-      //         return value + "%";
-      //       },
-      //     },
-      //   },
-      // },
-    };
-  }
+    }));
+  }, [details]);
 
   return (
-    <div>
+    <div className=" chart-bg">
       <div
+        className="donut-heading"
         hidden={details?.length <= 0}
-        className={multiLayer ? "center-heading" : ""}
+        //className={multiLayer ? "center-heading" : ""}
       >
         {heading}
       </div>
-      <div className="chart-container">
-        <Doughnut
-          data={data}
-          options={{
-            plugins: {
-              datalabels: {
-                formatter: function (value, context) {
-                  return context.chart.data.labels[context.dataIndex];
-                },
-                // align: "top",
-                // anchor: "center",
-                // offset: 25,
-                // padding: -2,
-                // clip: false,
-              },
-              legend: {
-                position: "top",
-                labels: {
-                  usePointStyle: true,
-                  pointStyle: "circle",
-                },
-              },
-            },
-          }}
-        />
-      </div>
+      <Chart
+        options={option}
+        series={dataSeries}
+        type="donut"
+        width={400}
+        //height={600}
+      />
     </div>
   );
 };
 
-export default DoughnutChart;
+export default Doughnut;

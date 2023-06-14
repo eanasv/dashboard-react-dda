@@ -7,4 +7,6 @@
   right: 0;
   margin-bottom: 40px;
   padding-top: 85px;
+  align-items: flex-end;
+  margin-left: 8%;
 }

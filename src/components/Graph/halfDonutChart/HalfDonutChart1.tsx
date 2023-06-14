@@ -40,7 +40,6 @@ const HalfDonutChart = () => {
 
   const handleElementsClick = (elems, event) => {
     if (elems.length > 0) {
-      console.log("Clicked!", elems[0]._model);
     }
   };
 

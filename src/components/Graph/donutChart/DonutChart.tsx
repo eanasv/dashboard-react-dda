@@ -9,32 +9,31 @@ interface donutChartInterface {
 }
 
 const DonutChart: React.FC<donutChartInterface> = ({ details, heading }) => {
-  var data1 = {
-    labels: details?.map((item) => item.category),
-    datasets: [
-      {
-        label: "# of Employees",
-        data: details?.map((item) => item.count),
-        backgroundColor: [
-          "#a2d6c4",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-        ],
-        borderColor: ["white", "white", "white"],
-        borderWidth: 3,
-      },
-    ],
-    // options: {
-    //   plugins: {
-    //     datalabels: {
-    //       formatter: (value) => {
-    //         console.log(value);
-    //         return value + "%";
-    //       },
-    //     },
-    //   },
-    // },
-  };
+  // var data1 = {
+  //   labels: details?.map((item) => item.category),
+  //   datasets: [
+  //     {
+  //       label: "# of Employees",
+  //       data: details?.map((item) => item.count),
+  //       backgroundColor: [
+  //         "#a2d6c4",
+  //         "rgba(54, 162, 235, 0.2)",
+  //         "rgba(255, 206, 86, 0.2)",
+  //       ],
+  //       borderColor: ["white", "white", "white"],
+  //       borderWidth: 3,
+  //     },
+  //   ],
+  //   // options: {
+  //   //   plugins: {
+  //   //     datalabels: {
+  //   //       formatter: (value) => {
+  //   //         return value + "%";
+  //   //       },
+  //   //     },
+  //   //   },
+  //   // },
+  // };
 
   const [display, setDisplay] = useState(false);
   const data = {
@@ -93,8 +92,8 @@ const DonutChart: React.FC<donutChartInterface> = ({ details, heading }) => {
 
       <div className="mixed-chart">
         <Chart
-          options={data.options}
-          series={data.series}
+          options={data?.options}
+          series={data?.series}
           type="donut"
           width="500"
         />

@@ -7,11 +7,11 @@ export const loaderSlice = createSlice({
   },
   reducers: {
     showLoader: (state) => {
-      console.log("loading started");
+      //console.log("loading started");
       state.isLoading = true;
     },
     hideLoader: (state) => {
-      console.log("loading stopped");
+      //console.log("loading stopped");
 
       state.isLoading = false;
     },

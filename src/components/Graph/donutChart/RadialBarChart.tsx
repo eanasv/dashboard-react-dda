@@ -11,113 +11,116 @@ const RadialBarChart: React.FC<radialChartInterface> = ({
   details,
   heading,
 }) => {
-  const [display, setDisplay] = useState(false);
-  const data = {
-    options: {
-      labels: details?.map((item) => item.category),
-      legend: {
-        show: true,
-        showForSingleSeries: false,
-        showForNullSeries: true,
-        showForZeroSeries: true,
-        //position: "top",
-      },
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200,
-            },
-          },
-        },
-      ],
-      plotOptions: {
-        radialBar: {
-          hollow: {
-            margin: 15,
-            size: "60%",
-            background: "transparent",
-            image: undefined,
-          },
-          dataLabels: {
-            name: {
-              show: true,
-            },
-            value: {
-              show: true,
-            },
-          },
-        },
-      },
-      //   legend: {
-      //     show: true,
-      //     showForSingleSeries: false,
-      //     showForNullSeries: true,
-      //     showForZeroSeries: true,
-      //     position: "bottom",
-      //     horizontalAlign: "center",
-      //     floating: false,
-      //     fontSize: "14px",
-      //     fontFamily: "Helvetica, Arial",
-      //     fontWeight: 400,
-      //     formatter: undefined,
-      //     inverseOrder: false,
-      //     width: undefined,
-      //     height: undefined,
-      //     tooltipHoverFormatter: undefined,
-      //     customLegendItems: [],
-      //     offsetX: 0,
-      //     offsetY: 0,
-      //     labels: {
-      //       colors: undefined,
-      //       useSeriesColors: false,
-      //     },
-      //     markers: {
-      //       width: 12,
-      //       height: 12,
-      //       strokeWidth: 0,
-      //       strokeColor: "#fff",
-      //       fillColors: undefined,
-      //       radius: 12,
-      //       customHTML: undefined,
-      //       onClick: undefined,
-      //       offsetX: 0,
-      //       offsetY: 0,
-      //     },
-      //     itemMargin: {
-      //       horizontal: 5,
-      //       vertical: 0,
-      //     },
-      //     onItemClick: {
-      //       toggleDataSeries: true,
-      //     },
-      //     onItemHover: {
-      //       highlightDataSeries: true,
-      //     },
-      //   },
+  const [series, setSeries] = useState(details?.map((item) => item.count));
+  const [option, setoption] = useState({
+    height: 450,
+    labels: details?.map((item) => item.category),
+    legend: {
+      show: true,
+      showForSingleSeries: false,
+      showForNullSeries: true,
+      showForZeroSeries: true,
+      //position: "top",
     },
-    series: details?.map((item) => item.count),
-  };
+    chart: {
+      width: 900, // Adjust the width
+      height: 900,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 600,
+          },
+        },
+      },
+    ],
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          // margin: 15,
+          size: "60%",
+          background: "transparent",
+          image: undefined,
+        },
+        dataLabels: {
+          name: {
+            show: true,
+          },
+          value: {
+            show: true,
+          },
+        },
+      },
+    },
+  });
+  // const data = {
+  //   options: {
+  //     labels: details?.map((item) => item.category),
+  //     legend: {
+  //       show: true,
+  //       showForSingleSeries: false,
+  //       showForNullSeries: true,
+  //       showForZeroSeries: true,
+  //       //position: "top",
+  //     },
+  //     responsive: [
+  //       {
+  //         breakpoint: 480,
+  //         options: {
+  //           chart: {
+  //             width: 200,
+  //           },
+  //         },
+  //       },
+  //     ],
+  //     plotOptions: {
+  //       radialBar: {
+  //         hollow: {
+  //           margin: 15,
+  //           size: "60%",
+  //           background: "transparent",
+  //           image: undefined,
+  //         },
+  //         dataLabels: {
+  //           name: {
+  //             show: true,
+  //           },
+  //           value: {
+  //             show: true,
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  //   series: details?.map((item) => item.count),
+  // };
 
   useEffect(() => {
-    setTimeout(() => setDisplay(true), 100);
-  }, []);
+    //setTimeout(() => setDisplay(true), 100);
+    setoption((prevState) => ({
+      ...prevState,
+      labels: details?.map((item) => item.category),
+    }));
+    setSeries(details?.map((item) => item.avgachieved_score));
+  }, [details]);
 
-  if (!display) {
-    return <></>;
-  }
   return (
-    <div className="mixed-chart">
-      <div className="radialHeading" hidden={details?.length <= 0}>
+    // <div className="mixed-chart">
+    //   <div className="radialHeading" hidden={details?.length <= 0}>
+    //     {heading}
+    //   </div>
+
+    <div className=" chart-bg">
+      <div
+        className="donut-heading"
+        hidden={details?.length <= 0}
+        //className={multiLayer ? "center-heading" : ""}
+      >
         {heading}
       </div>
-      <Chart
-        options={data.options}
-        series={data.series}
-        type="radialBar"
-        width="500"
-      />
+      <Chart options={option} series={series} type="radialBar" width="490" />
     </div>
   );
 };

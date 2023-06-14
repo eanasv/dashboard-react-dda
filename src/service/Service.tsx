@@ -5,7 +5,7 @@ export const getSkillPercentage = (skillArray) => {
   var employeeTotalScore = 0;
   var finalResult = 0;
   if (skillArray.length > 0) {
-    skillArray.map((item, id) => {
+    skillArray?.map((item, id) => {
       achievedEmployeeScore = achievedEmployeeScore + item.score;
       employeeTotalScore = employeeTotalScore + skillMaximumScoreValue;
     });

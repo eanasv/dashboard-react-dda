@@ -938,3 +938,158 @@ export const allEmployeeDetails = [
     evaluation_date: null,
   },
 ];
+export const catOne = [
+  {
+    id: 1,
+    category: "DATA SCIENCE",
+    levelCounts: [1, 2, 0, 0, 0, 0, 0, 0, 0],
+    count: 3,
+    grantTotalEmp: 18,
+  },
+  {
+    id: 2,
+    category: "BUSINESS INTELLIGENCE",
+    levelCounts: [0, 2, 3, 2, 0, 1, 0, 0, 0],
+    count: 8,
+    grantTotalEmp: 18,
+  },
+  {
+    id: 3,
+    category: "DATA ENGINEERING",
+    levelCounts: [0, 0, 2, 1, 0, 1, 0, 0, 0],
+    count: 4,
+    grantTotalEmp: 18,
+  },
+  {
+    id: 4,
+    category: "STATISTICS",
+    levelCounts: [0, 2, 0, 0, 0, 0, 0, 0, 0],
+    count: 2,
+    grantTotalEmp: 18,
+  },
+  {
+    id: 5,
+    category: "DATA MANAGEMENT AND GOVERNANCE",
+    levelCounts: [0, 1, 0, 0, 0, 0, 0, 0, 0],
+    count: 1,
+    grantTotalEmp: 18,
+  },
+];
+
+export const catTwo = [
+  {
+    id: 15,
+    category: "TECHNICAL SUPPORT",
+    levelCounts: [0, 1, 11, 4, 12, 0, 0, 0, 0],
+    count: 28,
+    grantTotalEmp: 231,
+  },
+  {
+    id: 16,
+    category: "QUALITY ASSURANCE",
+    levelCounts: [0, 0, 0, 9, 0, 0, 0, 0, 0],
+    count: 9,
+    grantTotalEmp: 231,
+  },
+  {
+    id: 17,
+    category: "PRODUCT SERVICE",
+    levelCounts: [1, 14, 14, 6, 0, 2, 0, 0, 0],
+    count: 37,
+    grantTotalEmp: 231,
+  },
+  {
+    id: 18,
+    category: "SOFTWARE & APPLICATION",
+    levelCounts: [0, 13, 29, 6, 13, 2, 4, 0, 0],
+    count: 67,
+    grantTotalEmp: 231,
+  },
+  {
+    id: 19,
+    category: "CX",
+    levelCounts: [0, 0, 0, 0, 4, 2, 0, 0, 0],
+    count: 7,
+    grantTotalEmp: 231,
+  },
+  {
+    id: 20,
+    category: "Infrastructure Category",
+    levelCounts: [0, 27, 17, 4, 8, 3, 0, 0, 0],
+    count: 59,
+    grantTotalEmp: 231,
+  },
+  {
+    id: 21,
+    category: "Project Management",
+    levelCounts: [7, 3, 9, 5, 0, 0, 0, 0, 0],
+    count: 24,
+    grantTotalEmp: 231,
+  },
+];
+
+export const catThree = [
+  {
+    id: 22,
+    category: "CYBER SECURITY GOVERNANCE",
+    levelCounts: [5, 4, 2, 1, 0, 1, 0, 0, 0],
+    count: 13,
+    grantTotalEmp: 30,
+  },
+  {
+    id: 23,
+    category: "CYBER SECURITY RISK MANAGEMENT",
+    levelCounts: [0, 0, 1, 0, 0, 0, 0, 0, 0],
+    count: 1,
+    grantTotalEmp: 30,
+  },
+  {
+    id: 24,
+    category: "CYBER SECURITY AUDIT",
+    levelCounts: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    count: 0,
+    grantTotalEmp: 30,
+  },
+  {
+    id: 25,
+    category: "CYBER SECURITY ARCHITECTURE",
+    levelCounts: [0, 0, 0, 1, 1, 0, 0, 0, 0],
+    count: 2,
+    grantTotalEmp: 30,
+  },
+  {
+    id: 26,
+    category: "VuInerability Assessment and Penetration Testing",
+    levelCounts: [0, 1, 1, 0, 0, 0, 0, 0, 0],
+    count: 2,
+    grantTotalEmp: 30,
+  },
+  {
+    id: 27,
+    category: "SECURITY OPERATIONS CENTRE",
+    levelCounts: [1, 2, 1, 1, 0, 0, 0, 0, 0],
+    count: 5,
+    grantTotalEmp: 30,
+  },
+  {
+    id: 28,
+    category: "INCIDENT RESPONSE",
+    levelCounts: [3, 2, 1, 0, 0, 0, 0, 0, 0],
+    count: 6,
+    grantTotalEmp: 30,
+  },
+  {
+    id: 29,
+    category: "DIGITAL FORENSICS AND MALWARE ANALYSIS",
+    levelCounts: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    count: 0,
+    grantTotalEmp: 30,
+  },
+  {
+    id: 30,
+    category: "THREAT HUNTING AND INTELLIGENCE",
+    levelCounts: [0, 1, 0, 0, 0, 0, 0, 0, 0],
+    count: 1,
+    grantTotalEmp: 30,
+  },
+];

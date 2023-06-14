@@ -43,3 +43,51 @@
 .each-entity-container {
   cursor: pointer;
 }
+.drop-down-tab3 {
+  display: flex;
+}
+.tab3-filter-container {
+  display: flex;
+  margin-left: 7%;
+}
+.date-range-filter-container {
+  display: flex;
+}
+.tab3-first-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 70px;
+  margin-top: 50px;
+}
+.tab3-sec-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+.top-padding {
+  padding: 3%;
+}
+.seperate-entity-box {
+  padding-top: 8%;
+  padding-left: 3%;
+}
+.flex-box-chart1 {
+  display: flex;
+  flex: 1;
+  margin-left: 8%;
+}
+.flex-box-chart2 {
+  display: flex;
+  flex: 1;
+}
+.summary-table {
+  margin-bottom: 50px;
+}
+.summary-text {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 2%;
+  text-decoration: underline;
+}

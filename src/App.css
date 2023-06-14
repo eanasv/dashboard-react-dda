@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+@font-face {
+  font-family: "29LTBukra-Bold";
+  src: url("../src/assets/fonts/29LTBukra-Bd.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "29LTBukra-Regular";
+  src: url("../src/assets/fonts/29LTBukra-Rg.ttf") format("truetype");
+}

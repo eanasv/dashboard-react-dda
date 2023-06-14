@@ -67,25 +67,6 @@ const data = {
   ],
 };
 
-const options1 = {
-  cutoutPercentage: [70, 50, 30],
-  legend: {
-    display: true,
-    position: "top",
-    labels: [
-      { text: "Red", fillStyle: "red" },
-      { text: "Blue", fillStyle: "blue" },
-      { text: "Green", fillStyle: "green" },
-      { text: "Orange", fillStyle: "orange" },
-      { text: "Purple", fillStyle: "purple" },
-      { text: "Yellow", fillStyle: "yellow" },
-      { text: "Pink", fillStyle: "pink" },
-      { text: "Gray", fillStyle: "gray" },
-      { text: "Brown", fillStyle: "brown" },
-    ],
-  },
-};
-
 const options = {
   plugins: {
     datalabels: {

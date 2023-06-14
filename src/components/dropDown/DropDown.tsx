@@ -7,11 +7,15 @@ interface dropDownType {
   onChangeDropDownItem?: any;
   mainList?: any;
   name?: String;
+  isMulti: boolean;
+  value?: any;
 }
 const DropDown: React.FC<dropDownType> = ({
   onChangeDropDownItem,
   mainList,
   name,
+  isMulti,
+  value,
 }) => {
   const [selectedOptions, setSelectedOptions] = useState(mainList);
 
@@ -23,7 +27,6 @@ const DropDown: React.FC<dropDownType> = ({
   function handleSelect(data) {
     setSelectedOptions(data);
     onChangeDropDownItem(data);
-    console.log(data);
   }
 
   return (
@@ -33,10 +36,12 @@ const DropDown: React.FC<dropDownType> = ({
         <div className="dropdown-container">
           <Select
             options={mainList}
-            isMulti
+            isMulti={isMulti}
             placeholder={`Select ${name}`}
             onChange={handleSelect}
             isSearchable={true}
+            className="dropdownOption"
+            //value={value}
           />
         </div>
       </div>

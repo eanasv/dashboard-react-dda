@@ -10,17 +10,14 @@ import { EntityList } from "../../entityList/EntityList";
 import "../Tabs.css";
 
 export const Tab2 = () => {
-  let match = useRouteMatch();
-  let history = useHistory();
-  const { path, url } = useRouteMatch();
-
   const [updatedEmployeeDetails, setupdatedEmployeeDetails] =
     useState<any>(allEmployeeDetails);
   const [updatedEntityList, setupdatedEntityList] = useState<any>(mainEntity);
   const [selectedEntity, setSelectedEntity] = useState(null);
 
-  const handleEntityClick = (name) => {
-    setSelectedEntity(name);
+  const handleEntityClick = (name, value, image) => {
+    setSelectedEntity({ name: name, scoreValue: value, logo: image });
+    console.log(value);
   };
 
   const backButtonClicked = () => {
@@ -29,7 +26,7 @@ export const Tab2 = () => {
   if (selectedEntity) {
     return (
       <EntityDetails
-        entityName={selectedEntity}
+        entity={selectedEntity}
         backButtonClicked={backButtonClicked}
       />
     );

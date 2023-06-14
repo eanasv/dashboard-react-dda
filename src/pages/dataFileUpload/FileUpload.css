@@ -1,0 +1,30 @@
+.upload-backgroound {
+  /* width: 96%;*/
+  height: 100vh;
+  margin: auto;
+  left: 0;
+  right: 0;
+  background-color: #a8cdff;
+  /* height: 200px; */
+  background-image: linear-gradient(to bottom right, #a8cdff, #e9f1fd, #79aefe);
+  /* margin-top: 20%; */
+}
+.upload-container {
+  height: 25vh;
+  width: 90%;
+  margin: auto;
+  background-color: white;
+  top: 25%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.response-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 40%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
